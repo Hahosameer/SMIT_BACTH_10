@@ -86,7 +86,7 @@ document.write("<br>")
 document.write("<h2>Question6</h2>")
 
 var greeting;
-var hour =13;
+var hour = 13;
 if(hour < 18){ 
 greeting = "Good day"
 document.write(greeting)
