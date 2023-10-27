@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: aqua;
+}
+
+.accordion{
+    min-width: 800px;
+}
+
+.accordion .qusetion{
+    position: relative;
+    margin: 10px 20px;
+    width: 800px;
+}
+.accordion .qusetion .lable{
+    position: relative;
+    padding: 10px;
+    background-color: #2694af;
+    color: white;
+
+}
+.accordion .qusetion .lable::before{
+    content: '+';
+    position: absolute;
+    top: 20%;
+    right: 20px;
+    transform: translate(-50%);
+    font-size: 1.5rem;
+
+}
+
+.accordion .qusetion .text{
+    position: relative;
+    /* padding: 10px; */
+    background-color: #fff;
+    height: 0;
+    overflow: hidden;
+    overflow-y: auto;
+
+    transition: 0.5px;
+}
+
+
+.accordion .qusetion .active .text{
+height: 150px;
+padding: 15px;
+}

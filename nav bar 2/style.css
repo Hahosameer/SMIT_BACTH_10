@@ -1,0 +1,92 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.main {
+    height: 100vh;
+    /* background-color: orange; */
+    background-color: aliceblue;
+    width: 100%;
+
+}
+
+.nav {
+    width: 300px;
+    height: 100vh;
+    background-color: #fff;
+    /* transform: translate(-100%); */
+    transition: all 0.5s;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    padding:  5px  15px;
+    /* background-color: red; */
+}
+
+span {
+    color: rgb(13, 114, 197) ; right: 0;
+}
+
+.logo h1 {
+    font-size: 30px;
+
+}
+
+.logo i {
+    font-size: 30px;
+    color: red;
+    cursor: pointer;
+
+}
+
+
+.list ul {
+    padding: 40px;
+
+}
+
+.list ul li {
+    margin-top: 20px;
+    list-style: none;
+    font-size: 30px;
+}
+
+.list ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.icon{
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ margin-left: 60px;
+ margin-bottom: 20px;
+
+}
+.icon i{
+    padding: 0 7px;
+    font-size: 20px;
+    color: rgb(13, 114, 197) ; right: 0;
+    cursor: pointer;
+}
+
+.hambar{
+    position: absolute;
+    top: 0;
+    color: rgb(13, 114, 197) ; right: 0;
+    padding: 10px;
+
+}
+.hambar i{
+    font-size: 40px;
+    color: rgb(77, 144, 198) ;
+    cursor: pointer;
+}
