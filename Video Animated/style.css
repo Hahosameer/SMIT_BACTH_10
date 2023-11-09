@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+video{
+    height: 90%;
+    width: 100%;
+}
+.btn{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 50px;
+}
+.btn span{
+    font-size: 70px;
+    cursor: pointer;
+}
+
+#stop{
+    display: none;
+}
+
+
+@media (max-width: 600px) {
+    .btn{
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 100px;
+    }
+}
