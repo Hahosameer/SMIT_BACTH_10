@@ -62,7 +62,7 @@ if((character === "a")||(character === "e")||(character === "i")||(character ===
 
 /////////////////////////////////////QUESTION 5//////////////////////////////////////////
 
-document.write("<h2>Question5</h2>")
+
 document.write("<br>")
 
 
@@ -80,18 +80,18 @@ if(userPassword === ""){
 
 /////////////////////////////////////QUESTION 6//////////////////////////////////////////
 
-document.write("<h2>Question6</h2>")
+
 document.write("<br>")
 
+// document.write(greeting)
+// var hour = 13;
 document.write("<h2>Question6</h2>")
 
-var greeting;
-var hour = 13;
-if(hour < 18){ 
-greeting = "Good day"
-document.write(greeting)
+var greeting = prompt("Please enter number");
+if(greeting < 18){ 
+alert  ("Good day")
 }else{
-greeting = "good Evening"
+alert("good Evening");
 }
 
 

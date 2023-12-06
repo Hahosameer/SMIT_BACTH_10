@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="main">
+        <div id="players1">
+          <div>
+            <h1 id="playerName1">Player 1</h1>
+            <span id="totalScore1">0</span>
+          </div>
+          <div class="contant">
+            <h2>CURRENT <br /><span id="currentScore1">0</span></h2>
+          </div>
+        </div>
+        <div id="players2">
+          <div>
+            <h1 id="playerName2">Player 1</h1>
+            <span id="totalScore2"> 0</span>
+          </div>
+          <div class="contant">
+            <h2>CURRENT <br /><span id="currentScore2">0</span></h2>
+          </div>
+        </div>
+        <button id="new">
+          <span style="font-size: 20px">❄️</span>&nbsp; &nbsp; &nbsp; New Game
+        </button>
+        <img id="image" src="assets/1.png" alt="" />
+        <button id="rollDice">
+          <span style="font-size: 20px">🎲</span>&nbsp;&nbsp;&nbsp;&nbsp;Roll
+          Dice
+        </button>
+        <button id="hold">🧑Hold</button>
+
+        <div id="inputContant">
+          <div id="contant">
+            <h1 id="heading">
+              how to play
+              <br />
+              50 points required to win the Game!
+            </h1>
+            <div id="inputkiValue">            
+              <div id="input1">
+                <h1>player1</h1>
+                <br />
+                <input
+                  id="inputPlayer1"
+                  type="text"
+                  placeholder="Enter your name"
+                />
+                <img id="pic1" src="assets/win.png" alt="" />
+                <input type="file" id="player1PicInput" />
+              </div>
+              <div id="input2">
+                <h1>player2</h1>
+                <br />
+                <input
+                  id="inputPlayer2"type="text"placeholder="Enter your name"
+                />
+                <img id="pic2" src="assets/win.png" alt="" />
+                <input type="file" id="player2PicInput" />
+              </div>
+              <h1 id="varsis">
+                <span style="color: black">V</span
+                ><span style="color: rgb(195, 192, 192)">S</span>
+              </h1>
+            </div>
+            <button id="okBtn">ok</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="winplayer1">
+      <img id="img" src="assets/win.png" alt="" />
+
+      <div class="winning-page" id="winningPage">
+        <h1>Congratulations!</h1>
+        <h2><span id="winPlayerName">Sameer </span> Win</h2>
+        <p>You are the Champion of Dice Game!</p>
+        <img id="winPic" src="assets/win.png" alt="Trophy" />
+        <br />
+        <a href="index.html" class="play-again-btn">Play Again</a>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
