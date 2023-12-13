@@ -1,57 +1,175 @@
-letloggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-const uservalue = document.querySelector(".uservalue");
-const setting = document.querySelector("#setting");
-const cross = document.querySelector("#cross");
-const updateEmail = document.querySelector('#updateEmail');
-const updatePassword = document.querySelector("#updatePassword");
+//docoment catch
+
+const modalkiImage = document.querySelector('#modalkiImage')
+const inputFile = document.querySelector('#input-file')
+const Gallery = document.querySelector(".fa-solid");
+const cardImageTop = document.querySelector("#cardImageTop");
+const textarea = document.querySelector("#message-text");
 
 
-const users = JSON.parse(localStorage.getItem("users"));
-console.log(users);
-// if (!loggedInUser) window.location.href = "../login/index.html";
+//    //////////////////////////logput handler 
 
-function updatepassword() {
+function logoutHandler(){
+  localStorage.removeItem('loggedInUser')
+ window.location.href = "../login/index.html"
+}
 
-let foundUser = users.find((user) => {
-  if (user.email = updateEmail.value) return user;
+//  image src change
+inputFile.onchange = function(){
+    modalkiImage.src = URL.createObjectURL(inputFile.files[0])
+
+    modalkiImage.style.display = "block"
+}
+//three  dot edit delete modal
+
+const dot = document.querySelector("#dot");
+const hide = document.querySelector(".hide");
+const cancle = document.querySelector("#cancle");
+
+//  delete modal ka liya
+
+dot.addEventListener('click',function(){
+    hide.style.display = "block"
+})
+cancle.addEventListener("click", function () {
+  hide.style.display = "none";
 });
 
-if (foundUser.password = updatePassword.value)
+// post handler//////
+const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+const postCard = document.querySelector("#postCard");
+
+const postLocalStorage = JSON.parse(localStorage.getItem('posts')) || []
 
 
 
+// postDisplayHandler
+const postDisplayHandler = () =>{
+  postCard.innerHTML = ""
+  
+const postLocalStorage = JSON.parse(localStorage.getItem("posts")) || [];
 
-localStorage.setItem("users", JSON.stringify(foundUser));
+console.log(postLocalStorage);
 
+postLocalStorage.forEach(post => {
 
-  localStorage.removeItem("loggedInUser");
-  window.location.href = "../login/index.html";
+let textHTML;
+if(post.imageUrl){
+
+textHTML = `
+            <div class="col-12 bg-danger" style="padding: 40px">
+              <div class="profilepost">
+                <img src="assets/unone user.jpg" alt="image" />
+                <h3 id="userName">${post?.userDetail.userName}</h3>
+                <i class="fa-solid fa-ellipsis-vertical" id="dot"></i>
+                <div class="hide">
+                  <ul>
+                    <li>Edit</li>
+                    <li>Delete</li>
+                    <li>Share</li>
+                    <li id="cancle">Cancle</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card" style="width: 100%">
+              
+                <div class="card-body">
+                  <p class="card-text" id="discription">
+                   ${post.textdate}
+                  </p>
+                  <img src=${post.imageUrl} alt="image" />
+                  <div class="icon">
+                    <ul>
+                      <li><i class="fa-regular fa-heart"></i>like</li>
+                      <li><i class="fa-regular fa-comment"></i>Comment</li>
+                      <li>
+                        <i class="fa-regular fa-share-from-square"></i>Send
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>`
+
+}else{
+  textHTML = `
+            <div class="col-12 bg-danger" style="padding: 40px">
+              <div class="profilepost">
+                <img src="assets/unone user.jpg" alt="image" />
+                <h3 id="userName">${post?.userDetail.userName}</h3>
+                <i class="fa-solid fa-ellipsis-vertical" id="dot"></i>
+                <div class="hide">
+                  <ul>
+                    <li>Edit</li>
+                    <li>Delete</li>
+                    <li>Share</li>
+                    <li id="cancle">Cancle</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card" style="width: 100%">
+              
+                <div class="card-body">
+                  <p class="card-text" id="discription">${post.textdate}</p>
+                  <div class="icon">
+                    <ul>
+                      <li><i class="fa-regular fa-heart"></i>like</li>
+                      <li><i class="fa-regular fa-comment"></i>Comment</li>
+                      <li>
+                        <i class="fa-regular fa-share-from-square"></i>Send
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>`;
+
 }
 
+    postCard.innerHTML += textHTML 
+  
+    
+});
 
 
-
-function logoutHanler() {
-  localStorage.removeItem("loggedInUser");
-  window.location.href = "../login/index.html";
-  console.log("chal gaya");
 }
+postDisplayHandler()
 
+function postHandler(){
+  
+  console.log("postHandler");
+  discription.textContent = textarea.value;
+  cardImageTop.src = modalkiImage.src;
+  //
+ 
 
+  
+  let postObj
+  if(cardImageTop) {
 
-// logoutHanler();
+    postObj = {
+      id: Date.now(),
+      textdate: about,
+      imageUrl: cardImageTop.src,
+      userDetail: JSON.parse(localStorage.getItem("loggedInUser")),
+    };
+  }else{
 
-function updatHandler(){
-    uservalue.style.display = "block";
-    setting.style.display = "none";
-   cross.style.display = "block";
+     postObj = {
+       id: Date.now(),
+       textdate: about,
+       userDetail: JSON.parse(localStorage.getItem("loggedInUser")),
+     };
+
+  }
+   textarea.value = "";
+    modalkiImage.src = "";
+
+  postLocalStorage.push(postObj)
+
+localStorage.setItem("posts", JSON.stringify(postLocalStorage));
+
+postDisplayHandler()
+
 }
-// updatHandler()
-
-function bandkardo() {
-    uservalue.style.display = "none";
-    cross.style.display = "none";
-  setting.style.display = "block";
-}
-// bandkardo()
-

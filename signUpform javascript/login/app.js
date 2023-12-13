@@ -13,7 +13,7 @@ const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
    
 // }, 2000);
 
-// if (loggedInUser) window.location.href = "../homepage/index.html";
+if (loggedInUser) window.location.href = "../homepage/index.html";
 //    logimHandler
 function loginHandler() {
   const users = JSON.parse(localStorage.getItem("users"));
