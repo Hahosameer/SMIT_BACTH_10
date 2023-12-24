@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up page </title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- font awesome link -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+
+    <div class="contaniner flex">
+        <div class="facbook-page flex">
+            <div class="text">
+                <h1>facebook</h1>
+                <p>Connect with froends and the world</p>
+                <p>Around you on facebook.</p>
+            </div>
+            <form action="">
+                <input type="email" id="email" placeholder="Email or phone number" required>
+                <input type="password" id="password" placeholder="password" required>
+                <div class="link">
+                    <button type="submit" class="login"  onclick="loginHandler()">Login</button>
+                    <a href="#" class="forget">forgot password</a>
+                </div>
+                <hr>
+                <!-- <div class="regi-link" style="text-align: center;margin-top: 0;margin-bottom: 5px;">
+                    <p style="font-size: 16px;">Don't have account ? <a href="#" class="signuplink" onclick="signupNow()" style=" color: #1877F2;">Sign Up Now</a></p>
+                </div> -->
+                <div class="button">
+                    <a href="#"onclick="signupNow()">Creat a new Account</a>
+                </div>
+                <div class="errorbox">
+                <i class="fa-solid fa-triangle-exclamation" id="errow"></i>error</div>
+            </form>
+        </div>
+    </div>
+
+    <div class="loding">
+      <img src="assets/loader.gif" alt="">
+        
+      </div>
+
+
+
+<script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    
+<div class="container">
+    <div class="cruved-shape"></div>
+    <div class="form-box login">
+        <h1>Login</h1>
+        <form action="#">
+            <div class="input-box">
+                <input type="email" id="email" required>
+                <label for="">Email</label>
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="text" id="password" required>
+                <label for="">Password</label>
+                <i class="fa-solid fa-lock" id="lock"></i>
+                <i class="fa-solid fa-circle-xmark" id="rongpass"></i>
+            </div>
+           
+            <div id="errorPass">
+                <p id="pass">pleas fill in this field </p>
+                <i class="fa-solid fa-triangle-exclamation" id="errow"></i>
+              </div>
+            <div class="input-box">
+              <button class="btn" onclick="loginHandler()">Login</button>
+            </div>
+            <div class="regi-link">
+                <p>Don't have account ? <a href="#" class="signuplink" onclick="signupNow()">Sign Up Now</a></p>
+            </div>
+
+        </form>
+    </div>
+    <div class="info-contant login">
+        <h2>GOING TO WEBSITE!</h2>
+        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
+    </div>
+</div>
+
+<div class="loder"></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="app.js"></script>
+</body>
+</html> -->

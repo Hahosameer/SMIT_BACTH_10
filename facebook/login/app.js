@@ -1,47 +1,44 @@
 
 const email = document.querySelector("#email");
-const rongpass = document.querySelector("#rongpass");
-const lock = document.querySelector("#lock");
-const con = document.querySelector("#con");
 const forget = document.querySelector("#forget");
-const container = document.querySelector(".container");
+const container = document.querySelector(".contaniner");
 const loder = document.querySelector(".loder");
 const password = document.querySelector("#password");
-const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+const loding = document.querySelector(".loding");
+const errorbox = document.querySelector(".errorbox");
 
 //  setTimeout(() => {
    
 // }, 2000);
+const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
 
 if (loggedInUser) window.location.href = "../homepage/index.html";
 //    logimHandler
+
+
 function loginHandler() {
+  console.log("login here");
   const users = JSON.parse(localStorage.getItem("users"));
 
-  //ckak filed
+  // ckak filed
   if (!email.value || !password.value) {
-    Swal.fire({
-      text: "Please fill in this filed",
-      confirmButtonColor: "#3085d6",
-    });
+   errorbox.style.display = "block";
+   errorbox.textContent = "Please fill in this filed";
     return;
   }
 
   // ckak leanght
 
   if (password.value.length < 6) {
-    Swal.fire({
-      text: "Password must be at least 6 characters",
-      confirmButtonColor: "#3085d6",
-    });
+      errorbox.style.display = "block";
+      errorbox.textContent = "Password must be at least 6 characters";
     return;
   }
 
   if (!users) {
-    Swal.fire({
-      text: "Sorry no user found",
-      confirmButtonColor: "#3085d6",
-    });
+       errorbox.style.display = "block";
+       errorbox.textContent = "Sorry user is found";
     return;
   }
 
@@ -50,18 +47,14 @@ function loginHandler() {
   });
 
   if (!foundUser) {
-    Swal.fire({
-      text: "No user found",
-      confirmButtonColor: "#3085d6",
-    });
+       errorbox.style.display = "block";
+       errorbox.textContent = "NO user found";
     return;
   }
 
   if (foundUser.password !== password.value){
-     Swal.fire({
-       text: "Invalid Credentials",
-       confirmButtonColor: "#3085d6",
-     });
+         errorbox.style.display = "block";
+         errorbox.textContent = "Invalid Credentials";
      return;
   }
     
@@ -70,7 +63,8 @@ function loginHandler() {
   localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
 
   container.style.display = "none";
-  loder.style.display = "block";
+  loding.style.display = "block";
+  loding.style.display = "flex";
 
   setTimeout(() => {
     window.location.href = "../homepage/index.html";

@@ -6,17 +6,13 @@ const submitBtn = document.querySelector("#submitBtn");
 const form = document.querySelector("form");
 const rongpass = document.querySelector("#rongpass");
 const lock = document.querySelector("#lock");
-const con = document.querySelector("#con");
 const bordar = document.querySelector("#bordar");
 // error get value
-const errorPassword = document.querySelector("#errorPass");
-const errorCpass = document.querySelector("#cpass");
-const input = document.querySelector("input");
-const lable = document.querySelector("label");
-const errow = document.querySelector("#errow");
-const container = document.querySelector(".container");
+const container = document.querySelector(".contaniner");
 const loder = document.querySelector(".loder");
-console.log(lable);
+const errorbox = document.querySelector(".errorbox");
+const errow = document.querySelector("#errow");
+const loding = document.querySelector(".loding");
 console.log(form);
 
 const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
@@ -35,26 +31,22 @@ function submitHandler() {
 
   // field chak
   if (!password.value || !email.value || !Cpassword.value || !userName.value){
-     Swal.fire({
-      
-       text: "Please fill in this filed",
-       confirmButtonColor: "#3085d6",
-     });
+    errorbox.style.display = "block"
+    errorbox.textContent = "Please fill in this field";
      return
   }
 
   // leanght chak
 
   if (password.value.length < 6) {
-    errorPassword.style.display = "block";
-    errow.style.display = "block";
-    errorPassword.textContent = "Password must be at least 6 characters";
+       errorbox.style.display = "block"
+    errorbox.textContent = "Password must be at least 6 characters";
     return;
   }
 
   if (password.value != Cpassword.value) {
-    lock.style.display = "none";
-    rongpass.style.display = "block";
+    errorbox.style.display = "block";
+    errorbox.textContent = "Pleas Correct Paasword";
     return;
   }
   const userNameFound = usersKiVal.find((user) => {
@@ -63,12 +55,8 @@ function submitHandler() {
 
   //Name fond ha tu
   if (userNameFound) {
-    Swal.fire({
-      title: "Sorry",
-      text: "User alredy taken",
-      confirmButtonColor: "#3085d6",
-   
-    });
+     errorbox.style.display = "block";
+     errorbox.textContent = "User alredy taken";
     return;
   }
 
@@ -78,12 +66,8 @@ function submitHandler() {
   ///Email found ha to
 
   if (userEmailFound) {
-    Swal.fire({
-      title: "Sorry",
-      text: "UserEmail already exist",
-      confirmButtonColor: "#3085d6",
-
-    });
+  errorbox.style.display = "block";
+    errorbox.textContent = "UserEmail already exist";
     return;
   }
 
@@ -102,7 +86,8 @@ function submitHandler() {
 
 container.style.display = "none";
 
-  loder.style.display = "block";
+ loding.style.display = "block";
+  loding.style.display = "flex"
 
 
   setTimeout(() => {
@@ -110,12 +95,3 @@ container.style.display = "none";
   }, 2000);
 }
 // submitHandler();
-
-password.addEventListener("click", function () {
-  errorPassword.style.display = "none";
-});
-
-Cpassword.addEventListener("click", function () {
-  rongpass.style.display = "none";
-  lock.style.display = "block";
-});

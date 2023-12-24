@@ -1,0 +1,206 @@
+*{
+
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: sans-serif;
+}
+
+.flex{
+   display: flex;
+   align-items: center;
+
+}
+
+.contaniner{
+   padding: 0 15px;
+   min-height: 100vh;
+   justify-content: center;
+   background-color: #f3f3f3;
+   /* background-color: red; */
+   /* display: none; */
+
+}
+.facbook-page{
+   justify-content: space-between;
+max-width: 1000px;
+width: 100%;
+}
+
+.facbook-page .text{
+   margin-bottom: 90px;
+}
+.facbook-page h1{
+   color: #1877F2;
+   font-size: 4rem;
+   margin-bottom: 10px;
+
+}
+
+.facbook-page p{
+   font-size: 1.75rem;
+   white-space: nowrap;
+}
+
+form{
+   display: flex;
+   flex-direction: column;
+   background: #fff;border-radius: 8 px;
+   padding: 20px;
+   box-shadow: 0 20px 4 rgba(0,0,0,0,1 ) 0 8px 146 rgba(0,0,0,0,1 );
+   max-width: 400px;
+   width: 100%;
+}
+
+form input{
+   height: 50px;
+   width: 100%;
+   border:  1px solid #ccc;
+   font-size: 1rem;
+   padding: 0 10px;
+}
+
+form input:focus{
+outline: none;
+border-color:#1877F2;
+}
+
+::placeholder{
+   color: #777;
+   font-size: 1.06rem;
+   
+}
+
+.link{
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+}
+
+.link .login{
+   border: none;
+   outline: none;
+   background-color:#1877F2 ;
+   padding: 15px 0;
+   border-radius: 6px;
+   color: white;
+   font-size: 1.25rem;
+   transition: 0.2s ease;
+}
+.link .login:hover{
+   background-color:#0d65d9 ;
+}
+form a{
+   text-decoration: none;
+}
+
+.link .forget{
+   color: #1877F2;
+   font-size: 0.875rem;
+}
+.link .forget:hover{
+   text-decoration: underline;
+}
+hr{
+   border: none;
+   height: 1px;
+   background-color: #ccc;
+   margin-bottom: 20px;
+   margin-top: 20px;
+}
+.button{
+   margin-top: 25px;
+   text-align: center;
+   margin-bottom: 20px;
+}
+.button a{
+   padding: 15px 20px;
+   background-color: #42b72a;
+   border-radius: 6px;
+   color: white;
+   font-size: 1.063rem;
+   font-weight: 600;
+   transition: 0.2 ease;
+}
+
+.button a:hover{
+   background-color: #3ba626;
+}
+
+.errorbox{
+   width: 100%;
+   height: 50px;
+   color: white;
+   padding: 15px 20px;
+   background-color: red;
+   /* border:  1px solid red; */
+   position: relative;
+   transition: 1s ease;
+   display: none;
+
+}
+
+#errow{
+   position: absolute;
+   top: 0;
+   right: 0;
+   background-color: rgb(230, 230, 230);
+   font-size: 30px;
+   height: 50px;
+   /* width: 50px; */
+   color: red;
+   padding: 14px;
+}
+
+
+@media (max-width: 900px) {
+
+   .facbook-page{
+       flex-direction: column;
+       text-align: center;
+   }
+   
+   .facbook-page .text{
+       margin-bottom: 30px;
+   }
+}
+
+@media (max-width:460px) {
+
+ .facbook-page h1{
+   font-size: 3.5rem;
+ }
+   
+ .facbook-page p{
+   font-size: 1.3rem;
+ }
+ 
+ form{
+   padding: 15px;
+ }
+}
+
+.loding{
+   width: 100%;
+   height: 100vh;
+   /* background-color: black; */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    display: none;
+}
+.loding img{
+   background-color: white;
+   width: 400px;
+   
+}
+
+
+@keyframes rotate {
+
+
+   100% {
+      rotate: 360deg;
+   }
+
+}

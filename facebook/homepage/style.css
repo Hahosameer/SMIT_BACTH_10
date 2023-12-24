@@ -1,0 +1,524 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #a45e5e;
+}
+
+/* /// navbar   */
+
+
+#navbar {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    padding: 0 5px;
+    background-color: #FFFFFF;
+    width: 100%;
+    /* margin-bottom: 100px; */
+    
+}
+
+.nav-left {
+    width: 25%;
+  
+}
+
+#navbottom{
+    width: 50%;
+    /* background-color: orange; */
+}
+
+
+.nav-left,
+.nav-mid,
+.nav-right {
+
+    display: flex;
+    align-items: center;
+    /* background-color: orange; */
+
+}
+
+.search-bar {
+    display: flex;
+    background-color: #F0F2F5;
+    padding: 5px 18px;
+    border-radius: 30px;
+    color: #606770;
+    align-items: center;
+}
+
+.search-input {
+    border: none;
+    /* font-size: 18px; */
+    background-color: transparent;
+    outline: none;
+    padding: 2px 5px;
+}
+
+.logo i {
+    font-size: 40px;
+    margin: 0 5px;
+    /* background-color: red; */
+    color: #0D6EFD;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.profile-image {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.nav-mid nav {
+    /* background-color: greenyellow; */
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0px 30px 0px 20px;
+}
+
+.nav-right {
+    width: 25%;
+    /* background-color: red; */
+    justify-content: flex-end;
+}
+
+.icon-right {
+    width: 40px;
+    height: 40px;
+    /* padding: 0px 20px; */
+    background-color: #F0F2F5;
+    
+    font-size: 25px;
+    border-radius: 50%;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
+
+}
+
+#hambar{
+    display: none;
+}
+
+#plus{
+    display: none;
+    
+
+}
+.icon-right:hover{
+    background-color: #e5e5e5;
+    
+}
+
+.icon {
+ 
+   /* background-color: orange; */
+    padding: 10px 40px 0px 40px;
+    font-size: 30px;
+    border-bottom: 3px solid transparent;
+    margin: 3px 0;
+    /* border-radius: 10px; */
+    cursor: pointer;
+}
+.icon:hover{
+    background-color: #F2F2F2;
+    border-bottom: 3px solid #0866FF;
+    color: #0866FF; 
+} 
+
+/* .activePage{
+    border-bottom: 3px solid #0866FF;-
+    color: #0866FF;
+} */
+
+
+/* ////////////////////////////left side bar /////////////////////////////////////////*/
+#left-sidebar{
+    /* background-color: orange; */
+   height: 95vh;
+   overflow: hidden;
+   overflow-y: scroll;
+   
+}
+#left-sidebar::-webkit-scrollbar{
+    width: 7px;
+}
+#left-sidebar::-webkit-scrollbar-thumb{
+   border-radius: 20px;
+   background-color: #f4f2f2;
+
+
+}
+#left-sidebar:hover::-webkit-scrollbar-thumb{
+    background-color: #959494;
+}
+.main-left{
+background-color: #606770;
+height: 100vh;
+
+
+}
+.main-left .img{
+    display: flex;
+    align-items: center;
+    
+    height: 40px;
+    margin: 5px 10px;
+}
+.main-left .img:hover{
+    background-color: #e8e7e7;
+}
+.main-left img{
+    width: 40px;
+    border-radius: 50%;
+}
+/* ////////////////////////////left side bar /////////////////////////////////////////*/
+
+@media (max-width:1100px) {
+ .search-input{
+    display: none;
+ }
+ .search-bar {
+    display: flex;
+    background-color: #F0F2F5;
+    padding: 15px;
+    border-radius: 50%;
+    color: #606770;
+    align-items: center;
+}
+.card-menu{
+    width: 300px;
+    background-color: red;
+    border-radius: 7px;
+    padding: 14px;
+}
+}
+
+/* /////////////////////////////////////////////navbar //////////////////////////////////////////////////  */
+
+
+/* secound page */
+#post1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+#postInput {
+    width: 450px;
+    height: 50px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border: 1px solid black;
+    outline: 0;
+}
+
+#postInput:hover {
+    background-color: #EBEBEB;
+}
+
+#start-row {
+    min-height: 100px;
+    margin: 100px 20px 50px 20px;
+    border-radius: 10px;
+}
+
+#image {
+    width: 50px;
+    /* height: 50px; */
+    border-radius: 50%;
+    margin: 0 10px;
+    background-color: orange;
+}
+
+#image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* modal page sstart///////// */
+
+#exampleModal {
+    display: none;
+    overflow: hidden;
+}
+
+.modalImage {
+    width: 100%;
+    height: 250px;
+    /* background-color: red; */
+}
+
+.modalImage img {
+    width: 100%;
+    height: 100%;
+    display: none;
+    object-fit: cover;
+}
+#exampleModalLabel{
+ /* background-color: red; */
+ width: 100%;
+ text-align: center;
+ font-weight: 600;
+}
+
+#modalProfile{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 12px 10px;
+    margin-bottom: 15px;
+    
+}
+#modalProfile img{
+    border-radius: 50%;
+}
+
+#modalProfile  p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: 550;
+    margin-top: 8px;
+    margin-left: 15px;
+}
+.file {
+    display: none;
+}
+
+label i {
+    font-size: 40px;
+    margin-right: 350px;
+
+}
+
+#message-text{
+    border: none;
+    outline: 0;
+    font-size: 20px;
+}
+/* modal page compelete */
+
+/* userpost */
+.card {
+    width: 100%;
+}
+
+.card img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.profilepost {
+    background-color: orange;
+    display: flex;
+    padding: 10px;
+    position: relative;
+}
+
+.profilepost img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* background-color: white; */
+}
+
+.profilepost h3 {
+    margin: 10px 10px;
+    text-transform: capitalize;
+}
+
+#dot {
+    position: absolute;
+    right: 0;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+/*icon  */
+
+
+.icon ul {
+    display: flex;
+}
+
+.icon ul li {
+    list-style: none;
+    padding: 10px;
+    font-size: 25px;
+    margin: 10px 13px;
+}
+
+.icon ul li i {
+    margin: 5px;
+    cursor: pointer;
+}
+
+.hide {
+    background-color: white;
+    padding: 10px;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    padding: 5px 25px 0px 0px;
+    margin: 25px;
+    display: none;
+   
+}
+
+.hide ul li {
+    list-style: none;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+
+/* drop-down 2 menu item start*/
+.card-menu-wrap{
+    position: absolute;
+    top: 90%;
+    right: 20px;
+    display: none;
+}
+
+.card-menu{
+    width: 360px;
+    background-color: white;
+    border-radius: 7px;
+    padding: 14px;
+}
+.profile-menu{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    padding: 12px 10px;
+    margin-bottom: 15px;
+    
+}
+.profile-menu p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: 550;
+    margin-top: 8px;
+    margin-left: 15px;
+}
+
+/* cerd menu itrm */
+ .card-menu-item{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    /* background-color: #d4c1c1; */
+    border-radius: 8px;
+    padding: 5px;
+    color: #252525;
+ }
+ .card-menu-item:hover{
+    background: #efefef;
+ }
+
+ .card-menu-item p{
+    width: 100%;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   margin-top: 10px;
+ }
+ .card-menu-item span{
+    font-size: 22px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+
+ .card-menu-item i{
+   
+    background-color: #e5e5e5;
+    padding: 12px;
+    font-size: 25px;
+    width: 40px;
+    height: 40px;
+    
+    margin-right: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .card-menu-item i:hover{
+    background-color: #efefef;
+
+ }
+/* drop-down 2 menu item end
+
+/* hero left */
+
+
+
+/* media queri  sectiopjn */
+@media (max-width:1100px) {
+    .search-input{
+       display: none;
+    }
+    .search-bar {
+       display: flex;
+       background-color: #F0F2F5;
+       padding: 15px;
+       border-radius: 50%;
+       color: #606770;
+       align-items: center;
+   }
+   .card-menu{
+       width: 300px;
+       background-color: red;
+       border-radius: 7px;
+       padding: 14px;
+   }
+
+   #hambar{
+    display: block;
+}
+
+   }
+
+
+@media (max-width:600px) {
+    .icon ul li {
+        list-style: none;
+        padding: 10px;
+        font-size: 18px;
+        margin: 10px 5px;
+    }
+
+    .icon ul li i {
+        margin: 5px
+    }
+
+}
