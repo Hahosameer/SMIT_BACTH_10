@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #a45e5e;
+    /* background-color: #a45e5e; */
 }
 
 /* /// navbar   */
@@ -155,13 +155,13 @@ body {
 /* ////////////////////////////left side bar /////////////////////////////////////////*/
 #left-sidebar{
     /* background-color: orange; */
-   height: 95vh;
+   height: 90vh;
    overflow: hidden;
    overflow-y: scroll;
    
 }
 #left-sidebar::-webkit-scrollbar{
-    width: 7px;
+    width: 8px;
 }
 #left-sidebar::-webkit-scrollbar-thumb{
    border-radius: 20px;
@@ -170,26 +170,39 @@ body {
 
 }
 #left-sidebar:hover::-webkit-scrollbar-thumb{
-    background-color: #959494;
+    background-color:#BCC0C4
 }
 .main-left{
-background-color: #606770;
+/* background-color: #606770; */
 height: 100vh;
 
 
 }
 .main-left .img{
     display: flex;
-    align-items: center;
-    
     height: 40px;
-    margin: 5px 10px;
+    margin: 15px 10px;
 }
 .main-left .img:hover{
     background-color: #e8e7e7;
+    border-radius: 7px;
 }
-.main-left img{
-    width: 40px;
+ .img p{
+    padding: 14px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #252525;
+}
+#left-bar-profile{
+    width: 30px;
+    height: 30px;
+    margin: 8px 12px;
+    border-radius: 50%;
+}
+.xdt5ytf{
+    width: 30px;
+    height: 30px;
+    margin: 5px 12px;
     border-radius: 50%;
 }
 /* ////////////////////////////left side bar /////////////////////////////////////////*/
