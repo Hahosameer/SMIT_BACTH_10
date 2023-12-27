@@ -6,7 +6,12 @@ const loder = document.querySelector(".loder");
 const password = document.querySelector("#password");
 const loding = document.querySelector(".loding");
 const errorbox = document.querySelector(".errorbox");
+const form = docoment.querySelector('form')
 
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+});
 //  setTimeout(() => {
    
 // }, 2000);

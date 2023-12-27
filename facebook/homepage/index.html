@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home page</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- booostrap link -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <!-- booostrap link -->
+<!-- font Awesome link -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -18,12 +21,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+<!-- font Awesome link -->
 
     <!-- remix icon cdn -->
     <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
     rel="stylesheet"
 />
+    <!-- remix icon cdn -->
+
   </head>
   <body>
     <!-- navbar -->
@@ -119,10 +125,10 @@
  
 
     <!-- post section -->
-    <div class="container-fluid" style="background-color: #F0F2F5;position: fixed;overflow-y: scroll;">
-      <div class="row d-flex justify-content-between  "style="">
+    <div class="container-fluid" style="background-color: #F0F2F5;;">
+      <div class="row d-flex justify-content-between" style="background-color: orane;">
         <!-- left side bar -->
-         <div class="col-lg-3 col-md-2 " id="left-sidebar">
+         <div class="col-lg-3 col-md-2 position:fixed" id="left-sidebar">
            <div class="main-left ">
             <div class="img">
               <img id="left-bar-profile" src="assets/unone user.jpg" alt="">
@@ -168,337 +174,143 @@
               <div class="x78zum5 xdt5ytf xq8finb x1xmf6yo x1e56ztr x1n2onr6 xamitd3 x1ywmky0 xnd27nj xv2ei83 x1og3r51 xv3fwf9"><img draggable="false" height="36" width="36" alt="" class="xz74otr" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/rsrc.php/v3/yi/r/eChFgZ345zp.png?_nc_eui2=AeElbXLYxhbhkBXZUcuPo1eENHvznuQKK_U0e_Oe5Aor9b8LBlHB4_IPKTk_abz3FubE1O8bQhS4tyyhxAoegeUL"></div>
               <p>Crisis response</p>
             </div>
+            <div class="img" onclick="seeMoraHandler()">
+              <div class="x14yjl9h xdt5ytf xudhj91 x18nykt9 xww2gxu x6s0dn4 x972fbf xcfux6l x1qhh985 xm0m39n x9f619 x3nfvp2 xl56j7k x1n2onr6 x1qhmfi1 xc9qbxq x14qfxbe"><svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color:var(--primary-icon)"><g fill-rule="evenodd" transform="translate(-448 -544)"><path fill-rule="nonzero" d="M452.707 549.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L456 552.586l-3.293-3.293z"></path></g></svg></div>
+              <p>See more</p>
+            </div>
+            <div class="seemoreicon">
+            <div class="img">
+              <!-- <div class="x14yjl9h xdt5ytf xudhj91 x18nykt9 xww2gxu x6s0dn4 x972fbf xcfux6l x1qhh985 xm0m39n x9f619 x3nfvp2 xl56j7k x1n2onr6 x1qhmfi1 xc9qbxq x14qfxbe"><svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color:var(--primary-icon)"><g fill-rule="evenodd" transform="translate(-448 -544)"><path fill-rule="nonzero" d="M452.707 549.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L456 552.586l-3.293-3.293z"></path></g></svg></div> -->
+              <i data-visualcompletion="css-img" class="xdt5ytf " style="background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/y0/r/mBH5oR81DT5.png?_nc_eui2=AeECo_l2I7zE3mb2prVybMj5LCH8r3loGJwsIfyveWgYnBfAZmbQ4JwmYvpVl3n42JEvqQFk_sn78TEDv7YPA3E9&quot;); background-position: -724px -176px; background-size: 942px 338px; width: 36px; height: 36px; background-repeat: no-repeat; display: inline-block;"></i>
+              <p>Blood Donation</p>
+            </div>
+            <div class="img">
+              <!-- <div class="x14yjl9h xdt5ytf xudhj91 x18nykt9 xww2gxu x6s0dn4 x972fbf xcfux6l x1qhh985 xm0m39n x9f619 x3nfvp2 xl56j7k x1n2onr6 x1qhmfi1 xc9qbxq x14qfxbe"><svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color:var(--primary-icon)"><g fill-rule="evenodd" transform="translate(-448 -544)"><path fill-rule="nonzero" d="M452.707 549.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L456 552.586l-3.293-3.293z"></path></g></svg></div> -->
+              <img draggable="false" height="36" width="36" alt="" class="xz74otr xdt5ytf" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/tKwWVioirmj.png?_nc_eui2=AeF_ELSiztXP_5xjOMVrf1RyruCnBWwp8W6u4KcFbCnxbuOoPYCvNWpIxupzuae6QmECUW3gFva9sH67In2W9WC7">
+              <p>Climate Science Center</p>
+            </div>
+            <div class="img">
+              <!-- <div class="x14yjl9h xdt5ytf xudhj91 x18nykt9 xww2gxu x6s0dn4 x972fbf xcfux6l x1qhh985 xm0m39n x9f619 x3nfvp2 xl56j7k x1n2onr6 x1qhmfi1 xc9qbxq x14qfxbe"><svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color:var(--primary-icon)"><g fill-rule="evenodd" transform="translate(-448 -544)"><path fill-rule="nonzero" d="M452.707 549.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L456 552.586l-3.293-3.293z"></path></g></svg></div> -->
+              <i data-visualcompletion="css-img" class="xdt5ytf " style="background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/y6/r/MXx87JcFKzH.png?_nc_eui2=AeHq8kAoZudaNWpcOyUixCFvpjWidniF_5qmNaJ2eIX_msiax9XRYIfrA9fMs8glZE1pRQu2Jt8SMSFsCwNJMc2G&quot;); background-position: 0px -342px; background-size: 38px 570px; width: 36px; height: 36px; background-repeat: no-repeat; display: inline-block;"></i>
+              <p>Funtraisers</p>
+            </div>
+            <div class="img">
+              <!-- <div class="x14yjl9h xdt5ytf xudhj91 x18nykt9 xww2gxu x6s0dn4 x972fbf xcfux6l x1qhh985 xm0m39n x9f619 x3nfvp2 xl56j7k x1n2onr6 x1qhmfi1 xc9qbxq x14qfxbe"><svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color:var(--primary-icon)"><g fill-rule="evenodd" transform="translate(-448 -544)"><path fill-rule="nonzero" d="M452.707 549.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L456 552.586l-3.293-3.293z"></path></g></svg></div> -->
+              <img draggable="false" height="36" width="36" alt="" class="xz74otr xdt5ytf" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/rsrc.php/v3/yI/r/eVgQ0NIygAW.png?_nc_eui2=AeHJqwJNtc6LrUFh_6R1i6RwenDeBEBBMht6cN4EQEEyG7ndh03Y7aQZXdvKUvIsxqC4sQn33ZPDub2axdrYHgid">
+              <p>Gaming Video</p>
+            </div>
+            <div class="img">
+              <!-- <div class="x14yjl9h xdt5ytf xudhj91 x18nykt9 xww2gxu x6s0dn4 x972fbf xcfux6l x1qhh985 xm0m39n x9f619 x3nfvp2 xl56j7k x1n2onr6 x1qhmfi1 xc9qbxq x14qfxbe"><svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color:var(--primary-icon)"><g fill-rule="evenodd" transform="translate(-448 -544)"><path fill-rule="nonzero" d="M452.707 549.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L456 552.586l-3.293-3.293z"></path></g></svg></div> -->
+              <i data-visualcompletion="css-img" class="xdt5ytf " style="background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/C48k7vCmXXS.png?_nc_eui2=AeFmX3C2U_5_l88gFtAk5ah6dcbp1aua5rF1xunVq5rmsRNFUKBL5cPkW3Ov6Ff91q32pRcNizWWozUxcmoyiCQ5&quot;); background-position: 0px 0px; background-size: 38px 196px; width: 36px; height: 36px; background-repeat: no-repeat; display: inline-block;"></i>
+              <p>Messanger</p>
+            </div>
+            <div class="img">
+              <!-- <div class="x14yjl9h xdt5ytf xudhj91 x18nykt9 xww2gxu x6s0dn4 x972fbf xcfux6l x1qhh985 xm0m39n x9f619 x3nfvp2 xl56j7k x1n2onr6 x1qhmfi1 xc9qbxq x14qfxbe"><svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color:var(--primary-icon)"><g fill-rule="evenodd" transform="translate(-448 -544)"><path fill-rule="nonzero" d="M452.707 549.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L456 552.586l-3.293-3.293z"></path></g></svg></div> -->
+              <img draggable="false" height="36" width="36" alt="" class="xz74otr xdt5ytf" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/-ZRs50L5kHA.png?_nc_eui2=AeFkA-GgxZqanQr6DuwPn-NnLwix1Sv5VOUvCLHVK_lU5XZH0lk0e9lh8rIXzaKIT2FXy8muv2GyRYKDb8QrDMS-">
+              <p>Messanger Kid</p>
+            </div>
+            <div class="img">
+              <!-- <div class="x14yjl9h xdt5ytf xudhj91 x18nykt9 xww2gxu x6s0dn4 x972fbf xcfux6l x1qhh985 xm0m39n x9f619 x3nfvp2 xl56j7k x1n2onr6 x1qhmfi1 xc9qbxq x14qfxbe"><svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color:var(--primary-icon)"><g fill-rule="evenodd" transform="translate(-448 -544)"><path fill-rule="nonzero" d="M452.707 549.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L456 552.586l-3.293-3.293z"></path></g></svg></div> -->
+              <img draggable="false" height="36" width="36" alt="" class="xz74otr xdt5ytf" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/xH4w-lk44we.png?_nc_eui2=AeGpKVlELiVCfAIWGNj201KwxcXEexUOKafFxcR7FQ4pp6Vd7Mndieoca5eg_BXO8I4NqgO-2lDzCMkTq2IpN-tx">
+              <p>Orders and Payment</p>
+            </div>
+            <div class="img">
+              <!-- <div class="x14yjl9h xdt5ytf xudhj91 x18nykt9 xww2gxu x6s0dn4 x972fbf xcfux6l x1qhh985 xm0m39n x9f619 x3nfvp2 xl56j7k x1n2onr6 x1qhmfi1 xc9qbxq x14qfxbe"><svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color:var(--primary-icon)"><g fill-rule="evenodd" transform="translate(-448 -544)"><path fill-rule="nonzero" d="M452.707 549.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L456 552.586l-3.293-3.293z"></path></g></svg></div> -->
+              <i data-visualcompletion="css-img" class="xdt5ytf " style="background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/y6/r/MXx87JcFKzH.png?_nc_eui2=AeHq8kAoZudaNWpcOyUixCFvpjWidniF_5qmNaJ2eIX_msiax9XRYIfrA9fMs8glZE1pRQu2Jt8SMSFsCwNJMc2G&quot;); background-position: 0px -114px; background-size: 38px 570px; width: 36px; height: 36px; background-repeat: no-repeat; display: inline-block;"></i>
+              <p>Page/p>
+            </div>
+            <div class="img">
+              <!-- <div class="x14yjl9h xdt5ytf xudhj91 x18nykt9 xww2gxu x6s0dn4 x972fbf xcfux6l x1qhh985 xm0m39n x9f619 x3nfvp2 xl56j7k x1n2onr6 x1qhmfi1 xc9qbxq x14qfxbe"><svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color:var(--primary-icon)"><g fill-rule="evenodd" transform="translate(-448 -544)"><path fill-rule="nonzero" d="M452.707 549.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L456 552.586l-3.293-3.293z"></path></g></svg></div> -->
+              <i data-visualcompletion="css-img" class="xdt5ytf " style="background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/y6/r/MXx87JcFKzH.png?_nc_eui2=AeHq8kAoZudaNWpcOyUixCFvpjWidniF_5qmNaJ2eIX_msiax9XRYIfrA9fMs8glZE1pRQu2Jt8SMSFsCwNJMc2G&quot;); background-position: 0px -76px; background-size: 38px 570px; width: 36px; height: 36px; background-repeat: no-repeat; display: inline-block;"></i>
+              <p>Play game</p>
+            </div>
+            <div class="img">
+              <!-- <div class="x14yjl9h xdt5ytf xudhj91 x18nykt9 xww2gxu x6s0dn4 x972fbf xcfux6l x1qhh985 xm0m39n x9f619 x3nfvp2 xl56j7k x1n2onr6 x1qhmfi1 xc9qbxq x14qfxbe"><svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" class="x19dipnz x1lliihq x1k90msu x2h7rmj x1qfuztq" style="--color:var(--primary-icon)"><g fill-rule="evenodd" transform="translate(-448 -544)"><path fill-rule="nonzero" d="M452.707 549.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L456 552.586l-3.293-3.293z"></path></g></svg></div> -->
+              <img draggable="false" height="36" width="36" alt="" class="xz74otr xdt5ytf" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/rsrc.php/v3/y-/r/VaQGECnx1Us.png?_nc_eui2=AeGpheKOccBk6m2E9PrvPsF7kycvohEyW_qTJy-iETJb-mj0wOtIaDC5BVYafoZG86Jx-AwBXBq4-nZLRAkP50Rv">
+              <p>Recant ad activity</p>
+            </div>
+          </div>
            </div>
          
         </div>
         <!-- left side bar -->
         
-        <div class="col-lg-5 col-md-8  bg-primary" id="postPage">
-          <div class="row justify-content-center bg-danger" id="start-row">
-            <div class="col-lg-12 col-md-12" id="post1">
+        <div class="col-lg-5 col-md-6 col-sm-12" id="postPage">
+          <div class="row justify-content-center" id="start-row">
+            <div class="col-lg-12 col-md-10  col-sm-6" id="post1">
               <div id="image">
                 <img src="assets/unone user.jpg" alt="image" />
               </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
+              <button type="button" id="postInput" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">What's on your mind</button>
             </div>
-            <div class="col-lg-12 col-md-12" id="post1">
-              <div id="image">
-                <img src="assets/unone user.jpg" alt="image" />
-              </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
-            </div>   <div class="col-lg-12 col-md-12" id="post1">
-              <div id="image">
-                <img src="assets/unone user.jpg" alt="image" />
-              </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
-            </div>   <div class="col-lg-12 col-md-12" id="post1">
-              <div id="image">
-                <img src="assets/unone user.jpg" alt="image" />
-              </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
-            </div>   <div class="col-lg-12 col-md-12" id="post1">
-              <div id="image">
-                <img src="assets/unone user.jpg" alt="image" />
-              </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
-            </div>   <div class="col-lg-12 col-md-12" id="post1">
-              <div id="image">
-                <img src="assets/unone user.jpg" alt="image" />
-              </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
-            </div>   <div class="col-lg-12 col-md-12" id="post1">
-              <div id="image">
-                <img src="assets/unone user.jpg" alt="image" />
-              </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
-            </div>   <div class="col-lg-12 col-md-12" id="post1">
-              <div id="image">
-                <img src="assets/unone user.jpg" alt="image" />
-              </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
-            </div>   <div class="col-lg-12 col-md-12" id="post1">
-              <div id="image">
-                <img src="assets/unone user.jpg" alt="image" />
-              </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
-            </div>   <div class="col-lg-12 col-md-12" id="post1">
-              <div id="image">
-                <img src="assets/unone user.jpg" alt="image" />
-              </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
-            </div>   <div class="col-lg-12 col-md-12" id="post1">
-              <div id="image">
-                <img src="assets/unone user.jpg" alt="image" />
-              </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
-            </div>   <div class="col-lg-12 col-md-12" id="post1">
-              <div id="image">
-                <img src="assets/unone user.jpg" alt="image" />
-              </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
-            </div>   <div class="col-lg-12 col-md-12" id="post1">
-              <div id="image">
-                <img src="assets/unone user.jpg" alt="image" />
-              </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
-            </div>   <div class="col-lg-12 col-md-12" id="post1">
-              <div id="image">
-                <img src="assets/unone user.jpg" alt="image" />
-              </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
-            </div>   <div class="col-lg-12 col-md-12" id="post1">
-              <div id="image">
-                <img src="assets/unone user.jpg" alt="image" />
-              </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
-            </div>   <div class="col-lg-12 col-md-12" id="post1">
-              <div id="image">
-                <img src="assets/unone user.jpg" alt="image" />
-              </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
-            </div>   <div class="col-lg-12 col-md-12" id="post1">
-              <div id="image">
-                <img src="assets/unone user.jpg" alt="image" />
-              </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
-            </div>   <div class="col-lg-12 col-md-12" id="post1">
-              <div id="image">
-                <img src="assets/unone user.jpg" alt="image" />
-              </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
-            </div>   <div class="col-lg-12 col-md-12" id="post1">
-              <div id="image">
-                <img src="assets/unone user.jpg" alt="image" />
-              </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
-            </div>   <div class="col-lg-12 col-md-12" id="post1">
-              <div id="image">
-                <img src="assets/unone user.jpg" alt="image" />
-              </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
-            </div>   <div class="col-lg-12 col-md-12" id="post1">
-              <div id="image">
-                <img src="assets/unone user.jpg" alt="image" />
-              </div>
-              <button
-                type="button"
-                id="postInput"
-                class="btn"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="@getbootstrap">
-                Start Post
-              </button>
+            
+            <div class="post-bar">
+            <div class="post-bar-icon"  onclick="imageOpenHandler()">
+              <img height="24" width="24" alt="" class="xz74otr" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/rsrc.php/v3/yF/r/v1iF2605Cb5.png?_nc_eui2=AeGj2kHgBJBoRf5O_0EgViip3Eh3Wgl8GJPcSHdaCXwYk7-4tCWmRUcbuZxkRURwcKicLTTYkNHZQKYXUjQ4rj1u">
+              <p>Live Video</p>
             </div>
+            <div class="post-bar-icon"  onclick="imageOpenHandler()">
+              <img height="24" width="24" alt="" class="xz74otr" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/a6OjkIIE-R0.png?_nc_eui2=AeFisQyfUYSVzNB9ym4KCHdzfK5Z1qDG7FV8rlnWoMbsVeT6wVY2DZWml7MBYyDLJIjoovRcOAUI7cfqRVEJiW4Y">
+              <p>Photo/Video</p>
+            </div>
+            <div class="post-bar-icon">
+              <img height="24" width="24" alt="" class="xz74otr" referrerpolicy="origin-when-cross-origin" src="https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/yMDS19UDsWe.png?_nc_eui2=AeHmU6I3R1PgclQQGaStpK-4v2_PAiqLvPK_b88CKou88lX5q7NJJeREMq5vm_tTG4VK6BYwkPTeEZcE4mo5H29V">
+              <p>Feeling/activity</p>
+            </div>
+            </div>
+            
+        
           </div>
           
           <!-- post row -->
 
           <div class="row justify-content-center" id="postCard">
 
-            <!-- <div class="col-12 bg-danger" style="padding: 40px">
+            <!-- <div class="col-12 bg-dangr" id="main-card">
               <div class="profilepost">
                 <img src="assets/unone user.jpg" alt="image" />
                 <h3 id="userName">sameer</h3>
                 <i class="fa-solid fa-ellipsis-vertical" id="dot" onclick="dotHandler()"></i>
-                <div class="hide">
-                  <ul>
-                    <li>Edit</li>
-                    <li>Delete</li>
-                    <li>Share</li>
-                    <li id="cancle">Cancle</li>
-                  </ul>
-                </div>
               </div>
-              <div class="card" style="width: 100%">
-              
-                <div class="card-body">
+              <div class="card">     
                   <p class="card-text" id="discription">
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
-                  <img src="" class="card-img-top" id="cardImageTop" alt="..." />
-                  <div class="icon">
-                    <ul>
-                      <li><i class="fa-regular fa-heart"></i>like</li>
-                      <li><i class="fa-regular fa-comment"></i>Comment</li>
-                      <li>
-                        <i class="fa-regular fa-share-from-square"></i>Send
-                      </li>
-                    </ul>
+                  <img src="assets/1.webp"  alt="image" />
+                  <div class="like">
+                    <i class="ri-thumb-up-fill"></i>
+                    <span id="num">0</span>
+                  </div>
+                  <div class="icons">
+                  <div class="bottom-icon" id="likessss" onclick="likessssHandler()">
+                    <i class="ri-thumb-up-line" id="lineLike"></i>
+                    <i class="ri-thumb-up-fill" id="fillLike" onclick="downLikeHandler()"></i>
+                    <p>like</p>
+                  </div>
+                  <div class="bottom-icon">
+                    <i class="fa-regular fa-comment"></i>
+                    <p>Comment</p>
+                  </div>
+                  <div class="bottom-icon">
+                    <i class="ri-share-forward-line"></i>
+                    <p>Share</p>
+                  </div>
                   </div>
                 </div>
-              </div>
-            </div> -->
+              </div> -->
 
-       
+
+        
+           
+            </div>
 
           </div>
 
         </div>
-        <div class="col-lg-3 bg-danger col-md-2" id="nav-right sticky-top">
-huyhuhu
-        
+    
+    <div class="col-lg-3 bg-dangr col-md-3 col-sm-3 position:fixed" id="right-sidebar">
+                  fggfgfgfgfgfffffffffffffffff
         </div>
       </div>
     </div>
@@ -523,25 +335,29 @@ huyhuhu
                 </div>
                 <textarea class="form-control"id="message-text" placeholder="What do you want to talk about ?" ></textarea>
               </div>
-              <div class="mb-3">
-                <label for="message-text" class="col-form-label">
-                  <label for="recipient-name" class="col-form-label" >Image Url:</label>
-                </label>
-                <input type="text" class="form-control"id="imageinput" placeholder="Enter your Imagr url" >
+              <div class="addpicture"  onclick="imageOpenHandler()">
+                <div class="add">
+                <!-- <i data-visualcompletion="css-img" class="x1b0d499 xep6ejk" style="background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yG/r/0bVN9jFeDyF.png?_nc_eui2=AeGKQEzpq9rcsnYuAsTEUtjtz1ZvQZzm1ifPVm9BnObWJ5bWIVEux_xGgFKHKArf_4pExIc09w5Ulp02Vc0wyof1&quot;); background-position: 0px -64px; background-size: 38px 122px; width: 20px; height: 20px; background-repeat: no-repeat; display: inline-block;"></i> -->
+                <i class="ri-add-circle-fill"></i>
+                <p>Add Photos/Videos</p>
               </div>
-              <button onclick="imageOpenhandler()">submit</button>
+              </div>
+              <div class="madalbox">
+                <p>Add to your post</p>
+                <ul>
+                  <li><img class="x1b0d499 xl1xv1r" src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/a6OjkIIE-R0.png?_nc_eui2=AeFisQyfUYSVzNB9ym4KCHdzfK5Z1qDG7FV8rlnWoMbsVeT6wVY2DZWml7MBYyDLJIjoovRcOAUI7cfqRVEJiW4Y" alt="" style="height: 24px; width: 24px;"></li>
+                  <li><img class="x1b0d499 xl1xv1r" src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/MqTJr_DM3Jg.png?_nc_eui2=AeGPgO1n_uM53sRQCZ5dFpxbt8fz8ZW9Ebm3x_Pxlb0RuVLl2yDLHTzP9kL4gU2Ias3aORgYZfIdHgw-R0KrtgAT" alt="" style="height: 24px; width: 24px;"></li>
+                  <li><img class="x1b0d499 xl1xv1r" src="https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/yMDS19UDsWe.png?_nc_eui2=AeHmU6I3R1PgclQQGaStpK-4v2_PAiqLvPK_b88CKou88lX5q7NJJeREMq5vm_tTG4VK6BYwkPTeEZcE4mo5H29V" alt="" style="height: 24px; width: 24px;"></li>
+                  <li><img class="x1b0d499 xl1xv1r" src="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/uywzfiZad5N.png?_nc_eui2=AeHYgprXtwYsUfbqp2Ez4cY5zQ4v13Ks4CbNDi_XcqzgJnFAI5h1aPBmiu8w0jKcYIUxO8jKEXzGQBhQ6p5OO3SJ" alt="" style="height: 24px; width: 24px;"></li>
+                  <li><img class="x1b0d499 xl1xv1r" src="https://static.xx.fbcdn.net/rsrc.php/v3/yX/r/j0Jp-GpONWx.png?_nc_eui2=AeHtvGLKZR75mIygLoEFUCJg_m0K4NvumlT-bQrg2-6aVG6LVCvIE5D0G3G_Sf16Kq3rnncqMJiM6Yy9mSdLDO3Y" alt="" style="height: 24px; width: 24px;"></li>
+                </ul>
+              </div>
+              <button id="postbtn" onclick="postHandler()">Post</button>
 
-              <div class="modalImage">
-                <img id="modalkiImage"src=""alt=""/>
-              </div>
+              
             </form>
           </div>
 
-          <div class="modal-footer">
-            <label for="input-file"><i class="fa-solid fa-image"></i></label>
-            <input class="file"type="file"accept="image/jpeg, image/png, image/jpg " id="input-file"/>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="postHandler()">Post</button>
-          </div>
         </div>
       </div>
     </div>

@@ -26,21 +26,19 @@ function logoutHandler(){
  window.location.href = "../login/index.html"
 }
 
-
-function openModalHandler(){
-  console.log("i am open handler");
- 
-     cardMenu.style.display = "block";
-
-  cardmenuimage.setAttribute("onclick", "closeModalHandler()");
+function openModalHandler() {
+  cardMenu.style.display = "block"
+  cardmenuimage.setAttribute('onclick', 'closeHandler()')
+  console.log("ffffdf");
 }
 
-function closeModalHandler(){
-  console.log("i am close handler");
-     cardMenu.style.display = "none";
-   cardmenuimage.setAttribute("onclick", "openModalHandler()");
+function closeHandler(){
+  console.log("dsddsds");
+  cardMenu.style.display = "none";
+  cardmenuimage.setAttribute('onclick','openModalHandler()')
 
 }
+
 
 function navbar() {
   const wondowWidth = window.innerWidth;
@@ -61,63 +59,28 @@ function navbar() {
 
 window.addEventListener("resize", navbar);
 
+const fillLike = document.querySelector("#fillLike");
+const lineLike = document.querySelector("#lineLike");
+const likessss = document.querySelector("#likessss");
+const num = document.querySelector("#num");
+const postbtn = document.querySelector("#postbtn");
 
-// modalkiImage.src = imageinput.value;
-// modalkiImage.src = imageinput.value;
-// modalkiImage.style.display = 'block'
-// console.log(imageinput);
-
-
-
-// // inputFile.addEventListener("change", () => {
-
-// // const fr = new FileReader();
-
-// // fr.readAsDataURL(inputFile.files[0]);
-// // fr.addEventListener('load', () => {
-
-// //   const url = fr.result
-// //   modalkiImage.src = fr
-// //   console.log(url);
-// //   console.log(fr);
-// // })
-
-// })
-
-
-//  image src change
-// inputFile.onchange = function(){
-//     modalkiImage.src = URL.createObjectURL(inputFile.files[0])
-
-//     modalkiImage.style.display = "block"
-//     console.log("ds");
+// function likessssHandler() {
+//   fillLike.style.display = "block";
+//   lineLike.style.display = "none";
+//   fillLike.style.color = "#0866FF";
+//   num.textContent = +1;
+//   //
+//   likessss.setAttribute("onclick", 'downLikeHandler()');
+//   console.log("sameer");
 // }
-//three  dot edit delete modal
-
-const dot = document.querySelector("#dot");
-const hide = document.querySelector(".hide");
-const cancle = document.querySelector("#cancle");
-
-//  delete modal ka liya
-
-
-// dot.addEventListener('click',function(){
-//     hide.style.display = "block"
-// });
-
-// function cancleHandler(){
-//    hide.style.display = "none";
-//    console.log("i am cancle");
+// function downLikeHandler() {
+//   fillLike.style.display = "none";
+//   lineLike.style.display = "block";
+//   fillLike.style.color = "black";
+//   num.textContent = 0;
+//   // likessss.setAttribute('onclick','likessssHandler()');
 // }
-
-function dotHandler(){
-   hide.style.display = "block";
-     console.log("i am dot");
-}
-
-// cancle.addEventListener("click", function () {
-//   hide.style.display = "none";/
-// });
 
 // post handler//////
 
@@ -126,7 +89,7 @@ const postCard = document.querySelector("#postCard");
 
 const postLocalStorage = JSON.parse(localStorage.getItem('posts')) || []
 
-
+let imageUrl;
 
 // postDisplayHandler
 const postDisplayHandler = () =>{
@@ -140,79 +103,77 @@ const postLocalStorage = JSON.parse(localStorage.getItem("posts")) || [];
    postLocalStorage.reverse().forEach(post => {
 
 let textHTML;
-if(post.imageUrl){
+if (post.imgData) {
+  textHTML = `  
 
-textHTML = `
-            <div class="col-12 bg-danger" style="padding: 40px">
+      <div class="col-12 bg-dangr" id="main-card">
               <div class="profilepost">
                 <img src="assets/unone user.jpg" alt="image" />
                 <h3 id="userName">${post?.userDetail.userName}</h3>
-                <i class="fa-solid fa-ellipsis-vertical" id="dot" onclick"dotHandler()"></i>
-                <div class="hide">
-                  <ul>
-                    <li>Edit</li>
-                    <li>Delete</li>
-                    <li>Share</li>
-                    <li id="cancle" onclick"cancleHandler()">Cancle</li>
-                  </ul>
-                </div>
+                <i class="fa-solid fa-ellipsis-vertical" id="dot" onclick="dotHandler()"></i>
               </div>
-              
-               <div class="card" style="width: 100%">
-               <div class="card-body">
-                  <p class="card-text" id="discription">${post.textdate}</p>
-
-                  <img src=${post.imageUrl} class="card-img-top" id="cardImageTop"  alt="..."/>
-                  <div class="icon">
-                    <ul>
-                      <li><i class="fa-regular fa-heart"></i>like</li>
-                      <li><i class="fa-regular fa-comment"></i>Comment</li>
-                      <li>
-                        <i class="fa-regular fa-share-from-square"></i>Send
-                      </li>
-                    </ul>
+              <div class="card">     
+                  <p class="card-text" id="discription">
+                    ${post.textdate}
+                  </p>
+                  <img src='${post?.imgData}'alt="image" />
+                  <div class="like">
+                    <i class="ri-thumb-up-fill"></i>
+                    <span id="num">0</span>
+                  </div>
+                  <div class="icons">
+                  <div class="bottom-icon" id="likessss" onclick="likessssHandler()">
+                    <i class="ri-thumb-up-line" id="lineLike"></i>
+                    <i class="ri-thumb-up-fill" id="fillLike" onclick="downLikeHandler()"></i>
+                    <p>like</p>
+                  </div>
+                  <div class="bottom-icon">
+                    <i class="fa-regular fa-comment"></i>
+                    <p>Comment</p>
+                  </div>
+                  <div class="bottom-icon">
+                    <i class="ri-share-forward-line"></i>
+                    <p>Share</p>
+                  </div>
                   </div>
                 </div>
-              </div>
-            </div>`;
-            console.log("imagee wala ho");
-
-}else{
+              </div> `
+  console.log("imagee wala ho");
+} else {
   textHTML = `
-          <div class="col-12 bg-danger" style="padding: 40px">
+           <div class="col-12 bg-dangr" id="main-card">
               <div class="profilepost">
                 <img src="assets/unone user.jpg" alt="image" />
                 <h3 id="userName">${post?.userDetail.userName}</h3>
-                <i class="fa-solid fa-ellipsis-vertical" id="dot" onclick"dotHandler()"></i>
-                <div class="hide">
-                  <ul>
-                    <li>Edit</li>
-                    <li>Delete</li>
-                    <li>Share</li>
-                    <li id="cancle" onclick"cancleHandler()">Cancle</li>
-                  </ul>
-                </div>
+                <i class="fa-solid fa-ellipsis-vertical" id="dot" onclick="dotHandler()"></i>
               </div>
-              <div class="card" style="width: 100%">
-              
-                <div class="card-body">
-                  <p class="card-text" id="discription">${post.textdate}</p>
-                  <div class="icon">
-                    <ul>
-                      <li><i class="fa-regular fa-heart"></i>like</li>
-                      <li><i class="fa-regular fa-comment"></i>Comment</li>
-                      <li>
-                        <i class="fa-regular fa-share-from-square"></i>Send
-                      </li>
-                    </ul>
+              <div class="card">     
+                  <p class="card-text" id="discription">
+                    ${post.textdate}
+                  </p>
+               
+                  <div class="like">
+                    <i class="ri-thumb-up-fill"></i>
+                    <span id="num">0</span>
+                  </div>
+                  <div class="icons">
+                  <div class="bottom-icon" id="likessss"${onclick="likessssHandler()"}>
+                    <i class="ri-thumb-up-line" id="lineLike"></i>
+                    <i class="ri-thumb-up-fill" id="fillLike" onclick="downLikeHandler()"></i>
+                    <p>like</p>
+                  </div>
+                  <div class="bottom-icon">
+                    <i class="fa-regular fa-comment"></i>
+                    <p>Comment</p>
+                  </div>
+                  <div class="bottom-icon">
+                    <i class="ri-share-forward-line"></i>
+                    <p>Share</p>
+                  </div>
                   </div>
                 </div>
-              </div>
-            </div>`
-            console.log("imagee wala nahi ho");
-
-
-
+              </div> `
+  console.log("imagee wala nahi ho");
 }
     postCard.innerHTML += textHTML 
   
@@ -223,42 +184,60 @@ textHTML = `
 }
 postDisplayHandler()
 
+
+
+function likessssHandler() {
+  fillLike.style.display = "block";
+  lineLike.style.display = "none";
+  fillLike.style.color = "#0866FF";
+  num.textContent = +1;
+  //
+  likessss.setAttribute("onclick", "downLikeHandler()");
+  console.log("sameer");
+}
+function downLikeHandler() {
+  fillLike.style.display = "none";
+  lineLike.style.display = "block";
+  fillLike.style.color = "black";
+  num.textContent = 0;
+  // likessss.setAttribute('onclick','likessssHandler()');
+}
+
+
+const imageOpenHandler = () => {
+  imageUrl = prompt("Post the link of your image");
+}
+
 ///////////////////////////////// post Handler///////////////////////////
 
 
-  //  cardImageTop.value = inputFile.value;
-function imageOpenhandler(){
-  cardImageTop.src = imageinput.value;
-  // modalkiImage.style.display = "block";
-  console.log(imageinput);
+ 
 
-}
 function postHandler(){
   console.log("postHandler");
-
-  // cardImageTop.src = imageinput.value;
-
-
- 
   let postObj;
-  if (cardImageTop) {
+  if (imageUrl) {
+    console.log(imageUrl);
     postObj = {
       id: Date.now(),
       textdate: textarea.value,
-      imageUrl: cardImageTop.src,
+      imgData: imageUrl,
       userDetail: JSON.parse(localStorage.getItem("loggedInUser")),
     };
-    console.log(modalkiImage.src);
+    postbtn.style.backGroundColor = "#0866FF"
+   
   } else {
     postObj = {
       id: Date.now(),
       textdate: textarea.value,
       userDetail: JSON.parse(localStorage.getItem("loggedInUser"))
     };
+    postbtn.style.backGroundColor = "#0866FF"
   }
 console.log(postObj);
   textarea.value = "";
-  modalkiImage.src = "";
+ 
+
 
   postLocalStorage.push(postObj);
 
