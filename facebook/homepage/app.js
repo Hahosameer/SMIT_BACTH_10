@@ -1,12 +1,55 @@
 //docoment catch
 
+import { 
+   
+  addDoc,
+  auth,
+  collection,
+  db,
+  getDoc,
+  getDocs,
+  onAuthStateChanged,
+  query,
+  signOut,
+  doc as docFromFirebase,
+  doc,
+  deleteDoc,
+  setDoc,} from "../utils/firebaseConfig.js";
+
+
+let userDetails;
+let uid;
+onAuthStateChanged(auth, async (user) => {
+  if (user) {
+  
+    uid = user.uid;
+    console.log(uid, "==>> uid");
+    const docRef = doc(db, "users", uid);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+      userDetails = docSnap.data();
+      console.log(docSnap.data());
+    } else {
+      console.log("No Document found");
+    }
+
+    // ...
+  } else {
+    // User is signed out
+    // ...
+    window.location.href = "../login/index.html";
+  }
+});
+////////////////////////////////////////////
+
 const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
-if(!loggedInUser) window.location.href = "../login/index.html"
+// if(!loggedInUser) window.location.href = "../login/index.html"
 
 
 const modalkiImage = document.querySelector('#modalkiImage')
-const inputFile = document.querySelector('#input-file')
 const Gallery = document.querySelector(".fa-solid");
 const cardImageTop = document.querySelector("#cardImageTop");
 const textarea = document.querySelector("#message-text");
@@ -18,30 +61,76 @@ const plus = document.querySelector('#plus')
 const hambar = document.querySelector('#hambar')
 const menuicon = document.querySelector("#menuicon");
 const gamepad = document.querySelector("#gamepad");
+const seeless = document.querySelector("#seeless");
+const userid = document.querySelector("#userid");
+const modalprofile = document.querySelector("#modalprofile");
+const cardimgtop = document.querySelector("#mariimg");
+const profileimage = document.querySelector(".profileimage");
+const modalpic1 = document.querySelector("#modalpic1");
+const leftbarprofile = document.querySelector("#left-bar-profile");
 
+console.log(profileimage);
 //    //////////////////////////logput handler 
-
-function logoutHandler(){
-  localStorage.removeItem('loggedInUser')
- window.location.href = "../login/index.html"
-}
-
-function openModalHandler() {
-  cardMenu.style.display = "block"
-  cardmenuimage.setAttribute('onclick', 'closeHandler()')
+const seemoreicon = document.querySelector(".seemoreicon");
+const seemore = document.querySelector("#seemore");
+// function logoutHandler(){
+//   localStorage.removeItem('loggedInUser')
+//  window.location.href = "../login/index.html"
+// }
+window.openModalHandler =()=> {
+  cardMenu.style.display = "block";
+  cardmenuimage.setAttribute("onclick", "closeHandler()");
   console.log("ffffdf");
 }
+// const logoutHandler = () => {
+//   //   localStorage.removeItem("loggedInUser");
 
-function closeHandler(){
+//   //   window.location.href = "../login/index.html";
+
+//   signOut(auth)
+//     .then(() => {
+//       // Sign-out successful.
+//       window.location.href = "../login/index.html";
+//     })
+//     .catch((error) => {
+//       // An error happened.
+//       console.log(error, "===>> error");
+//     });
+// };
+
+
+
+
+window.closeHandler =() =>{
   console.log("dsddsds");
   cardMenu.style.display = "none";
   cardmenuimage.setAttribute('onclick','openModalHandler()')
 
 }
+window.seeMoraHandler = () => {
+seemoreicon.style.display = "block"
+seemore.style.display = 'none'
+}
+ window.seelessHandler =() => {
+  seemoreicon.style.display = "none";
+  seemore.style.display = "block";
+  
+}
+
+leftbarprofile.addEventListener('click', function(){
+
+})
+
+
+const leftSideBar = document.querySelector("#left-sidebar");
+window.hambarHandler =() =>{
+leftSideBar.style.display= "block"
+ }
 
 
 function navbar() {
   const wondowWidth = window.innerWidth;
+  
   if (wondowWidth <= 1000) {
     gamepad.style.display = "none";
     menuicon.style.display = "none";
@@ -65,22 +154,25 @@ const likessss = document.querySelector("#likessss");
 const num = document.querySelector("#num");
 const postbtn = document.querySelector("#postbtn");
 
-// function likessssHandler() {
+// likessss.addEventListener("click", function () {
 //   fillLike.style.display = "block";
 //   lineLike.style.display = "none";
 //   fillLike.style.color = "#0866FF";
 //   num.textContent = +1;
 //   //
-//   likessss.setAttribute("onclick", 'downLikeHandler()');
+//   // likessss.setAttribute("onclick", "downLikeHandler()");
 //   console.log("sameer");
-// }
-// function downLikeHandler() {
+// }); 
+
+
+// fillLike.addEventListener("click", function () {
 //   fillLike.style.display = "none";
 //   lineLike.style.display = "block";
 //   fillLike.style.color = "black";
 //   num.textContent = 0;
+//     console.log("sameer kkk");
 //   // likessss.setAttribute('onclick','likessssHandler()');
-// }
+// });
 
 // post handler//////
 
@@ -92,10 +184,30 @@ const postLocalStorage = JSON.parse(localStorage.getItem('posts')) || []
 let imageUrl;
 
 // postDisplayHandler
-const postDisplayHandler = () =>{
+const postDisplayHandler = async() =>{
 
   postCard.innerHTML = ""
   
+  //firebase se bht sarey documents lenay jaa raha hun
+
+  const posts = [];
+  const q = query(collection(db, "posts"));
+
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach(async (doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    console.log(doc.id, " => ", doc.data());
+
+    const singlePost = doc.data();
+
+    posts.push({ ...singlePost, id: doc.id });
+
+    //user data laa k do, jis ney posting ki thi
+
+    // singlePost.userUid
+  });
+ console.log(posts, "===>> posts");
+
 const postLocalStorage = JSON.parse(localStorage.getItem("posts")) || [];
 
        console.log(postLocalStorage);
@@ -109,8 +221,8 @@ if (post.imgData) {
       <div class="col-12 bg-dangr" id="main-card">
               <div class="profilepost">
                 <img src="assets/unone user.jpg" alt="image" />
-                <h3 id="userName">${post?.userDetail.userName}</h3>
-                <i class="fa-solid fa-ellipsis-vertical" id="dot" onclick="dotHandler()"></i>
+                <h3 id="userName">${post?.userDetails.userName}</h3>
+                <i class="fa-solid fa-ellipsis-vertical" id="dot" onclick="dotHandler('${post.id}')"></i>
               </div>
               <div class="card">     
                   <p class="card-text" id="discription">
@@ -122,9 +234,9 @@ if (post.imgData) {
                     <span id="num">0</span>
                   </div>
                   <div class="icons">
-                  <div class="bottom-icon" id="likessss" onclick="likessssHandler()">
+                  <div class="bottom-icon" id="likessss">
                     <i class="ri-thumb-up-line" id="lineLike"></i>
-                    <i class="ri-thumb-up-fill" id="fillLike" onclick="downLikeHandler()"></i>
+                    <i class="ri-thumb-up-fill" id="fillLike"></i>
                     <p>like</p>
                   </div>
                   <div class="bottom-icon">
@@ -137,14 +249,18 @@ if (post.imgData) {
                   </div>
                   </div>
                 </div>
-              </div> `
+              </div> `;
+            // userid.textContent = loggedInUser.userName;
+            // modalpic1.textContent = loggedInUser.userName;
+            // 
+
   console.log("imagee wala ho");
 } else {
   textHTML = `
            <div class="col-12 bg-dangr" id="main-card">
               <div class="profilepost">
                 <img src="assets/unone user.jpg" alt="image" />
-                <h3 id="userName">${post?.userDetail.userName}</h3>
+                <h3 id="userName"></h3>
                 <i class="fa-solid fa-ellipsis-vertical" id="dot" onclick="dotHandler()"></i>
               </div>
               <div class="card">     
@@ -157,9 +273,9 @@ if (post.imgData) {
                     <span id="num">0</span>
                   </div>
                   <div class="icons">
-                  <div class="bottom-icon" id="likessss"${onclick="likessssHandler()"}>
+                  <div class="bottom-icon" id="likessss"  onclick="likeHandler()" >
                     <i class="ri-thumb-up-line" id="lineLike"></i>
-                    <i class="ri-thumb-up-fill" id="fillLike" onclick="downLikeHandler()"></i>
+                    <i class="ri-thumb-up-fill" id="fillLike""></i>
                     <p>like</p>
                   </div>
                   <div class="bottom-icon">
@@ -172,37 +288,27 @@ if (post.imgData) {
                   </div>
                   </div>
                 </div>
-              </div> `
+              </div> `;
+              // userid.textContent = loggedInUser.userName;
+           
   console.log("imagee wala nahi ho");
 }
     postCard.innerHTML += textHTML 
   
-    
 });
-
 
 }
 postDisplayHandler()
 
+      
 
-
-function likessssHandler() {
-  fillLike.style.display = "block";
-  lineLike.style.display = "none";
-  fillLike.style.color = "#0866FF";
-  num.textContent = +1;
-  //
-  likessss.setAttribute("onclick", "downLikeHandler()");
-  console.log("sameer");
+function  likeHandler(){
+  console.log("i am like");
+  // lineLike.style.display = "none";
+  // fillLike.style.display = "block";
+  //   fillLike.style.color = "#0866FF";
+    // num.textContent = +1;
 }
-function downLikeHandler() {
-  fillLike.style.display = "none";
-  lineLike.style.display = "block";
-  fillLike.style.color = "black";
-  num.textContent = 0;
-  // likessss.setAttribute('onclick','likessssHandler()');
-}
-
 
 const imageOpenHandler = () => {
   imageUrl = prompt("Post the link of your image");
@@ -247,3 +353,11 @@ console.log(postObj);
 
 
 }
+
+
+
+
+// function myProfileHandler(){
+//  cardimgtop.value = imageUrl;
+// profileimage.scr =  imageUrl
+// }

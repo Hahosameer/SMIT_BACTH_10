@@ -14,56 +14,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!--     
-<div class="container">
-
-    <div class="cruved-shape"></div>
-    <div class="form-box login">
-      
-        <form action="#" id="form">
-          <h1>SIGN UP</h1>
-            <div class="input-box">
-                <input type="text" id="name" required>
-                <label for="">Username</label>
-                <i class="fa-solid fa-user"></i>
-            </div>
-            <div class="input-box">
-              <input type="text" id="email" required>
-              <label for="">Email</label>
-              <i class="fa-solid fa-envelope"></i>
-          </div>
-          <div class="input-box">
-            <input type="text"id="password" required>
-            <label for="">Password</label>
-            <i class="fa-solid fa-lock"></i>
-            
-          </div>
-          <div id="errorPass">
-            <p id="pass">Password must be at least 6 characters </p>
-            <i class="fa-solid fa-triangle-exclamation"></i>
-          </div>
-            <div class="input-box">
-                <input type="text" id="Cpassword"  required>
-                <label for="">Confirm Password</label>
-                <i class="fa-solid fa-lock" id="lock"></i>
-                <i class="fa-solid fa-unlock-keyhole" id="con"></i>
-                <i class="fa-solid fa-circle-xmark" id="rongpass"></i>
-            </div>
-            <div class="input-box">
-              <button class="btn" type="submit" onclick="submitHandler()">SUBMIT</button>
-            </div>
-            <div class="regi-link">
-                <p>Don't have account ? <a href="#" class="signuplink">sign in</a></p>
-            </div>
-
-        </form>
-    </div>
-    <div class="info-contant login">
-      <h2>GOING TO LOGIN!</h2>
-       
-        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
-    </div>
-</div> -->
     <div class="contaniner flex">
       <div class="facbook-page flex">
         <div class="text">
@@ -94,7 +44,7 @@
           />
 
           <div class="link">
-            <button type="submit" class="login" onclick="submitHandler()">
+            <button type="submit" class="login" id="submitBtn">
               SignUp
             </button>
           </div>
@@ -108,12 +58,9 @@
     </div>
     <div class="loding">
       <img src="assets/loader.gif" alt="">
-      <!-- <div class="main">
-        <h1>Loding...</h1>
-        <div class="loder"></div>
-      </div> -->
+
     </div>
 
-    <script src="app.js"></script>
+    <script src="app.js" type="module"></script>
   </body>
 </html>

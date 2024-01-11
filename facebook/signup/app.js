@@ -1,8 +1,15 @@
+
+
+
+// import { auth } from "../utils/firebaseConfig";
+// import { doc } from "../utils/firebaseConfig";
+import { db, getDoc } from "../utils/firebaseConfig.js";
+import {  addInDBById, auth, doc, onAuthStateChanged, signUp,  } from "../utils/functions.mjs";
+
 const userName = document.querySelector("#name");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
-const Cpassword = document.querySelector("#Cpassword");
-const submitBtn = document.querySelector("#submitBtn");
+const cPassword = document.querySelector("#Cpassword");
 const form = document.querySelector("form");
 const rongpass = document.querySelector("#rongpass");
 const lock = document.querySelector("#lock");
@@ -13,85 +20,124 @@ const loder = document.querySelector(".loder");
 const errorbox = document.querySelector(".errorbox");
 const errow = document.querySelector("#errow");
 const loding = document.querySelector(".loding");
+
+const signupBtn = document.querySelector("#submitBtn");
+
 console.log(form);
 
-const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+// const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
-if (loggedInUser) window.location.href = "../homepage/index.html";
+// if (loggedInUser) window.location.href = "../homepage/index.html";
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 });
 
-function submitHandler() {
-  console.log("chal gaya");
+console.log("chal gaya");
 
-  const usersKiVal = JSON.parse(localStorage.getItem("users")) || [];
-  console.log(usersKiVal, "=====>>>>");
+// const usersKiVal = JSON.parse(localStorage.getItem("users")) || [];
+// console.log(usersKiVal, "=====>>>>");
 
-  // field chak
-  if (!password.value || !email.value || !Cpassword.value || !userName.value){
-    errorbox.style.display = "block"
-    errorbox.textContent = "Please fill in this field";
-     return
+// field chak
+
+// leanght chak
+
+//                                                         sign up handler
+
+onAuthStateChanged(auth, async (user) => {
+  //login
+  if (user) {
+    const uid = user.uid; //uid
+    console.log(uid, "==>> uid");
+
+    alert("user is logged in");
+
+    const docRef = doc(db, "users", uid);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+
+      alert("user data is available");
+      // window.location.href = "../home/index.html";
+    } else {
+      // docSnap.data() will be undefined in this case
+      console.log("No such document!");
+    }
+
+    // ...
+  } else {
+    alert("user signout hai");
+    // User is signed out
+    // ...
+    // window.location.href = "../login/index.html";
   }
+});
 
-  // leanght chak
+////////////////////////////////////////////////////////////////////////////////////////////
 
-  if (password.value.length < 6) {
-       errorbox.style.display = "block"
-    errorbox.textContent = "Password must be at least 6 characters";
+
+
+const signupHandler = async () => {
+
+
+  //checking if password and confirm password are same
+  if (password.value !== cPassword.value) {
+    alert("Password and Confirm Password does not match");
     return;
   }
 
-  if (password.value != Cpassword.value) {
-    errorbox.style.display = "block";
-    errorbox.textContent = "Pleas Correct Paasword";
-    return;
-  }
-  const userNameFound = usersKiVal.find((user) => {
-    if (user.userName === userName.value) return user;
-  });
-
-  //Name fond ha tu
-  if (userNameFound) {
-     errorbox.style.display = "block";
-     errorbox.textContent = "User alredy taken";
+  //checking if any field is empty
+  if (
+    !email.value ||
+    !userName.value ||
+    !password.value ||
+    !cPassword.value
+  ) {
+    alert("Please fill all the fields");
     return;
   }
 
-  const userEmailFound = usersKiVal.find((user) => {
-    if (user.email === email.value) return user;
-  });
-  ///Email found ha to
-
-  if (userEmailFound) {
-  errorbox.style.display = "block";
-    errorbox.textContent = "UserEmail already exist";
-    return;
-  }
-
-  const user = {
-    id: Date.now(),
-    userName: userName.value,
+  // creating data object to add in db
+  const data = {
     email: email.value,
+    userName: userName.value,
     password: password.value,
-    CPassword: Cpassword.value,
   };
 
-  usersKiVal.push(user);
-
-  localStorage.setItem("users", JSON.stringify(usersKiVal));
-
-
-container.style.display = "none";
-
- loding.style.display = "block";
-  loding.style.display = "flex"
-
-
-  setTimeout(() => {
-    window.location.href = "../login/index.html";
-  }, 2000);
-}
-// submitHandler();
+  //calling signuUp function from utils/functions.mjs
+  const registering = await signUp(email.value, password.value);
+  if (registering.status) {
+    // const profilePictureName = `${new Date().getTime()}-${
+    //   profilePicture.files[0].name
+    // }`;
+    // //calling uploadFile function from utils/functions.mjs
+    // const upload = await uploadFile(
+    //   profilePicture.files[0],
+    //   profilePictureName
+    // );
+    // if (upload.status) {
+    //   data.profilePicture = upload.downloadURL;
+    //   alert(upload.message);
+    // } else {
+    //   alert(upload.message);
+    // }
+    //calling addInDBById function from utils/functions.mjs
+    const userAddInDB = await addInDBById(
+      data,
+      registering.data.user.uid,
+      "users"
+    );
+    if (userAddInDB.status) {
+      alert(userAddInDB.message);
+      alert(registering.message);
+     window.location.href = "../homepage/index.html";
+    } else {
+      alert(userAddInDB.message);
+    }
+  } else {
+    alert(registering.message);
+  }
+};
+signupBtn.addEventListener("click", signupHandler);
+///////////////////////////////////////////////////////////////////////////////////////////

@@ -153,7 +153,8 @@ body {
 
 /* ////////////////////////////left side bar /////////////////////////////////////////*/
 #left-sidebar {
-    background-color: #F0F2F5;
+    /* background-color: #F0F2F5; */
+    background-color: orange;
     /* overflow: hidden; */
     height: 90vh;
     overflow-y: scroll;
@@ -200,12 +201,7 @@ body {
     color: #252525;
 }
 
-#left-bar-profile {
-    width: 30px;
-    height: 30px;
-    margin: 5px 12px 5px 0px;
-    border-radius: 50%;
-}
+
 
 .xdt5ytf {
     width: 30px;
@@ -215,13 +211,45 @@ body {
 }
 
 .seemoreicon{
-    height: 0px;
+    /* height: 0px;di */
+    display: none;
 }
+#seemore i{
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+    /* background-color: red; */
+}
+
+#seemore span{
+    font-size: 14px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+.profilebtn{
+    width: 0px;
+    height: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  margin-right: 15px;
+    border-radius: 50%;
+    /* margin-right: 20px; */
+    
+
+   }
+#userName{
+
+    text-transform: capitalize;
+}
+
 /* ////////////////////////////left side bar /////////////////////////////////////////*/
 /* ////////////////////////////right sidebar///////////////////////////////////////// */
 #right-sidebar {
     position: fixed;
     /* position: a/bsolute; */
+    margin-top: 60px;
     right: 0;
     top: 0;
     float: right;
@@ -250,40 +278,27 @@ body {
 }
 
 /* ////////////////////////////right sidebar///////////////////////////////////////// */
-@media (max-width:1100px) {
-    .search-input {
-        display: none;
-    }
 
-    .search-bar {
-        display: flex;
-        background-color: #F0F2F5;
-        padding: 15px;
-        border-radius: 50%;
-        color: #606770;
-        align-items: center;
-    }
-
-    .card-menu {
-        width: 300px;
-        border-radius: 7px;
-        padding: 14px;
-    }
-}
 
 /* /////////////////////////////////////////////  center section/////////////////////////////////////////////  */
 #postPage {
     margin: 0 auto;
     /* display: flex; */
     /* justify-content: center; */
-    background-color: #F0F2F5;
-    /* background-color: red; */
+    /* background-color: #F0F2F5; */
+    background-color: red;
     /* height: 100vh; */
+}
+
+#row{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 
 #start-row {
-    width: 480px;
+    /* width: 480px; */
     margin: 20px auto;
     /* margin: 20px 20px 50px 20px; */
     border-radius: 10px;
@@ -294,7 +309,8 @@ body {
 
 #post1 {
     display: flex;
-
+    justify-content: center;
+    align-items: center;
     /* background-color: yellow; */
     border-bottom: 1px solid black;
     margin-bottom: 10px;
@@ -325,7 +341,7 @@ body {
 
 .post-bar-icon p {
     margin-left: 8px;
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 15px;
 }
 
@@ -409,7 +425,7 @@ border-radius: 10px;
 /* modal page sstart///////// */
 
 #exampleModal {
-    display: none;
+    /* display: none; */
     overflow: hidden;
 }
 
@@ -502,9 +518,10 @@ label i {
 }
 
 #main-card {
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: gray;
     margin: 20px ;
-    border: 1.5px solid #F0F2F5;
+    /* border: 1.5px solid #F0F2F5; */
     border-radius: 10px;
     padding: 0px;
     margin: 10px;
@@ -517,8 +534,10 @@ label i {
 /* userpost */
 .card {
     width: 100%;
+    border:  1px solid orange ;
     background-color: yellow;
     border-radius: 10px;
+
     /* margin-top: 50px; */
 }
 
@@ -532,6 +551,7 @@ label i {
 
 .card p {
     padding: 10px;
+    /* background-color: greenyellow; */
 }
 
 .profilepost {
@@ -595,7 +615,7 @@ label i {
     align-items: center;
     font-weight: 50px;
     height: 50px;
-    width: 160px;
+    width: 100%;
     /* background-color: ghostwhite; */
     padding: 10px;
     cursor: pointer;
@@ -714,7 +734,33 @@ label i {
 
 
 /* media queri  sectiopjn */
+
+
+
+
 @media (max-width:1100px) {
+
+
+
+    #postPage {
+        margin: 10px auto;
+        /* display: flex; */
+        /* justify-content: center; */
+        background-color: #F0F2F5;
+        /* background-color: red; */
+        /* height: 100vh; */
+    }
+    
+    
+    #start-row {
+        width: 100%;
+        margin: 40px ;
+        /* margin: 20px 20px 50px 20px; */
+        border-radius: 10px;
+        background-color: #fff;
+        padding: 10px;
+    
+    }
     .search-input {
         display: none;
     }
@@ -730,7 +776,25 @@ label i {
 
     .card-menu {
         width: 300px;
-        background-color: red;
+        border-radius: 7px;
+        padding: 14px;
+    }
+    .search-input {
+        display: none;
+    }
+
+    .search-bar {
+        display: flex;
+        background-color: #F0F2F5;
+        padding: 15px;
+        border-radius: 50%;
+        color: #606770;
+        align-items: center;
+    }
+
+    .card-menu {
+        width: 300px;
+        /* background-color: red; */
         border-radius: 7px;
         padding: 14px;
     }
@@ -756,18 +820,36 @@ label i {
     }
 
 }
-
-
-@media (max-width:600px) {
-    .icon ul li {
-        list-style: none;
-        padding: 10px;
-        font-size: 18px;
-        margin: 10px 5px;
+@media (max-width:1000px) {
+   .nav-mid{
+    /* display: none; */
+    visibility: hidden;
+   }
+    #left-sidebar {
+        background-color: #F0F2F5;
+        /* overflow: hidden; */
+        height: 90vh;
+        overflow-y: scroll;
+        position: fixed;
+        display: none;
     }
+    
 
-    .icon ul li i {
-        margin: 5px
+    #right-sidebar {
+        position: fixed;
+        /* position: a/bsolute; */
+        margin-top: 60px;
+        right: 0;
+        top: 0;
+        float: right;
+        height: 100vh;
+        /* overflow: hidden; */
+        overflow-y: scroll;
+        background-color: red;
+        display: none;
+        /* visibility: visible; */
+        
+    
+    
     }
-
 }
